@@ -59,8 +59,8 @@ const setInnerText = (id, value) => {
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
-    setInnerText("delivery-charge", parseFloat(30).toFixed(2));
-    setInnerText("total-tax", (priceConverted * 0.2).toFixed(2));
+    setInnerText("delivery-charge", parseFloat(30).toFixed(2));  // used toFixed method for showing 2 decimal points
+    setInnerText("total-tax", (priceConverted * 0.2).toFixed(2)); //used toFixed method for showing 2 decimal points
   }
   if (priceConverted > 400) {
     setInnerText("delivery-charge", parseFloat(50).toFixed(2));
@@ -76,6 +76,6 @@ const updateTaxAndCharge = () => {
 const updateTotal = () => {
   const grandTotal = getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  document.getElementById("total").innerText = grandTotal.toFixed(2);
+  document.getElementById("total").innerText = grandTotal.toFixed(2);  //used toFixed method for showing 2 decimal points
 };
 loadProducts();
